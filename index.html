@@ -49,7 +49,6 @@
             font-style: italic;
         }
 
-        /* ===== МУЗЫКАЛЬНЫЙ ПЛЕЕР ===== */
         .music-player {
             position: fixed;
             bottom: 30px;
@@ -100,7 +99,6 @@
             font-weight: 400;
         }
 
-        /* ===== ГАЛЕРЕЯ ===== */
         .gallery {
             display: flex;
             flex-direction: column;
@@ -143,7 +141,6 @@
             font-weight: 500;
         }
 
-        /* КНОПКА С СЮРПРИЗОМ */
         .surprise-btn {
             display: block;
             margin: 40px auto 0;
@@ -226,7 +223,7 @@
         <div class="slide">
             <img src="https://i.postimg.cc/9MXqS0xj/images-(6).jpg" alt="Фото 1" />
             <div class="caption">
-                <strong>❤️ аллаху акбар</strong> — я не придумал, что можно подарить тебе.
+                <strong>❤️ аллаху окбар</strong> — я не придумал, что можно подарить тебе.
             </div>
         </div>
 
@@ -240,15 +237,14 @@
         <div class="slide">
             <img src="https://i.postimg.cc/SxpR3jR2/hq720.jpg" alt="Фото 3" />
             <div class="caption">
-                <strong>🌙 бубубубубубббебкбекsexoodfsfsalk</strong> — C Днем рождения, Юля. Я не смог подарить тебе тысячи, но сделал прикольную открытку :3. Запомни, даже после самой темной ночи приходит рассвет
+                <strong>🌙 Третья история</strong> — C Днем рождения, Юля. Я не смог подарить тебе тысячи, но сделал прикольную открытку :3. Запомни, даже после самой темной ночи приходит рассвет
             </div>
         </div>
-
 
         <div class="slide">
             <img src="https://i.postimg.cc/jdnnBGhQ/754598612915082.jpg" alt="Фото" />
             <div class="caption">
-                <strong>🔥 cвiнка</strong>.
+                <strong>🔥 свiнка</strong>.
             </div>
         </div>
 
@@ -266,7 +262,7 @@
 
 <div class="music-player">
     <span class="music-label">🎵 <span>фон</span></span>
-    <audio id="bgMusic" loop autoplay>
+    <audio id="bgMusic" loop>
         <source src="music.mp3" type="audio/mpeg">
         Твой браузер не поддерживает аудио.
     </audio>
@@ -284,13 +280,29 @@
         }
     }
 
-    document.addEventListener('click', function() {
+    function playMusic() {
         const audio = document.getElementById('bgMusic');
         if (audio.paused) {
             audio.play().catch(function(e) {
-                console.log('Музыка не запустилась:', e);
+                console.log('Автозапуск заблокирован:', e);
             });
         }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        playMusic();
+    });
+
+    document.addEventListener('click', function() {
+        playMusic();
+    }, { once: true });
+
+    document.addEventListener('touchstart', function() {
+        playMusic();
+    }, { once: true });
+
+    window.addEventListener('load', function() {
+        setTimeout(playMusic, 500);
     });
 </script>
 
