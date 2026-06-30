@@ -259,22 +259,23 @@
     </div>
 
     <!-- Кнопка с сюрпризом -->
-    <button class="surprise-btn" onclick="showSurprise()">🎁 Нажми, если ты патриот ZZZZZZZZ</button>
+    <button class="surprise-btn" onclick="showSurprise()">🎁 Нажми, если я тебе дорог</button>
 
     <!-- Скрытый сюрприз -->
     <div id="surpriseMessage" class="hidden-message">
         💎 <strong>Ты — единственная причина,</strong><br />
-        по которой я вообще решил вновь.<br />
+        по которой я вообще решил всё это сделать.<br />
         <span style="font-size: 26px; display: block; margin-top: 12px;">❤️</span>
     </div>
 
 </div>
 
-<!-- ===== МУЗЫКАЛЬНЫЙ ПЛЕЕР (ВИСИТ ВНИЗУ СПРАВА) ===== -->
+<!-- ===== МУЗЫКАЛЬНЫЙ ПЛЕЕР ===== -->
 <div class="music-player">
     <span class="music-label">🎵 <span>фон</span></span>
     <audio id="bgMusic" loop autoplay>
-        <source src="https://voca.ro/1oRCR3Er3XZu" type="audio/mpeg">
+        <!-- ПРЯМАЯ ССЫЛКА НА MP3 (вместо страницы) -->
+        <source src="https://voca.ro/1oRCR3Er3XZu/download" type="audio/mpeg">
         Твой браузер не поддерживает аудио.
     </audio>
 </div>
@@ -287,17 +288,19 @@
         if (el.classList.contains('show')) {
             btn.textContent = '✨ Ты нажала ✨';
         } else {
-            btn.textContent = '🎁 Нажми, если ты патриот ZZZZZZZZ';
+            btn.textContent = '🎁 Нажми, если ты патриот ZZZZ';
         }
     }
 
-    // Автозапуск музыки (чиним для браузеров)
-    window.addEventListener('click', function() {
+    // Автозапуск музыки
+    document.addEventListener('click', function() {
         const audio = document.getElementById('bgMusic');
         if (audio.paused) {
-            audio.play().catch(() => {});
+            audio.play().catch(function(e) {
+                console.log('Музыка не запустилась:', e);
+            });
         }
-    }, { once: true });
+    });
 </script>
 
 </body>
