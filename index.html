@@ -221,10 +221,8 @@
     <h1>✨ Для тебя</h1>
     <div class="subtitle">Каждая картинка с мыслью о тебе</div>
 
-    <!-- ===== ГАЛЕРЕЯ С КАРТИНКАМИ ===== -->
     <div class="gallery">
 
-        <!-- КАРТОЧКА 1 -->
         <div class="slide">
             <img src="https://i.postimg.cc/9MXqS0xj/images-(6).jpg" alt="Фото 1" />
             <div class="caption">
@@ -232,7 +230,6 @@
             </div>
         </div>
 
-        <!-- КАРТОЧКА 2 -->
         <div class="slide">
             <img src="https://i.postimg.cc/43sK7nRL/dsfdsf.jpg" alt="Фото 2" />
             <div class="caption">
@@ -240,7 +237,6 @@
             </div>
         </div>
 
-        <!-- КАРТОЧКА 3 -->
         <div class="slide">
             <img src="https://i.postimg.cc/SxpR3jR2/hq720.jpg" alt="Фото 3" />
             <div class="caption">
@@ -248,7 +244,7 @@
             </div>
         </div>
 
-        <!-- КАРТОЧКА 4 (добавленная) -->
+
         <div class="slide">
             <img src="https://i.postimg.cc/jdnnBGhQ/754598612915082.jpg" alt="Фото" />
             <div class="caption">
@@ -258,10 +254,8 @@
 
     </div>
 
-    <!-- Кнопка с сюрпризом -->
     <button class="surprise-btn" onclick="showSurprise()">🎁 Нажми, если я тебе дорог</button>
 
-    <!-- Скрытый сюрприз -->
     <div id="surpriseMessage" class="hidden-message">
         💎 <strong>Ты — единственная причина,</strong><br />
         по которой я вообще решил всё это сделать.<br />
@@ -270,11 +264,9 @@
 
 </div>
 
-<!-- ===== МУЗЫКАЛЬНЫЙ ПЛЕЕР ===== -->
 <div class="music-player">
     <span class="music-label">🎵 <span>фон</span></span>
     <audio id="bgMusic" loop autoplay>
-        <!-- СЮДА ВСТАВЬ ИМЯ ФАЙЛА (ОБЯЗАТЕЛЬНО В ТОЙ ЖЕ ПАПКЕ) -->
         <source src="music.mp3" type="audio/mpeg">
         Твой браузер не поддерживает аудио.
     </audio>
@@ -292,7 +284,6 @@
         }
     }
 
-    // Автозапуск музыки
     document.addEventListener('click', function() {
         const audio = document.getElementById('bgMusic');
         if (audio.paused) {
